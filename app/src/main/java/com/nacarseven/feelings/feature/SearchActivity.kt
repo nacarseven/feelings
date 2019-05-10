@@ -1,7 +1,8 @@
-package com.nacarseven.feelings
+package com.nacarseven.feelings.feature
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.nacarseven.feelings.R
 
 class SearchActivity : AppCompatActivity() {
 
