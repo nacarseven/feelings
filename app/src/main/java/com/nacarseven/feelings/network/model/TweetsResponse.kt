@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Tweet(
+data class TweetsResponse(
     @Json(name = "text")
     val description: String,
 
