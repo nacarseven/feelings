@@ -11,8 +11,9 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 
-class SearchViewModel(private var searchRepository: SearchRepositoryContract) : ViewModel() {
-
+class SearchViewModel(
+    private var searchRepository: SearchRepositoryContract
+) : ViewModel() {
 
     private val disposables = CompositeDisposable()
     private val stream = PublishSubject.create<Intention>()
@@ -33,11 +34,11 @@ class SearchViewModel(private var searchRepository: SearchRepositoryContract) : 
             .ofType(Intention.SearchTweets::class.java)
             .switchMap { query ->
 
-                if (query.userTimeline.isEmpty())
+                if (query.text.isEmpty())
                     return@switchMap Observable.just(ScreenState.Empty)
 
                 searchRepository
-                    .getSearchResult(query.userTimeline)
+                    .getSearchResult(query.text)
                     .subscribeOn(Schedulers.io())
                     .map { ScreenState.Result(it) as ScreenState }
                     .onErrorReturn { ScreenState.Result(emptyList()) }
@@ -56,7 +57,8 @@ class SearchViewModel(private var searchRepository: SearchRepositoryContract) : 
 
 
     sealed class Intention {
-        data class SearchTweets(val userTimeline: String) : Intention()
+        data class SearchTweets(val text: String) : Intention()
+        object ClearSearch : Intention()
 
     }
 

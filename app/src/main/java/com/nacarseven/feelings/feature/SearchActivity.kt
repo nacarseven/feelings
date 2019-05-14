@@ -2,10 +2,13 @@ package com.nacarseven.feelings.feature
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.jakewharton.rxbinding2.view.RxView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.observeNonNull
 import io.reactivex.Observable
 import org.koin.android.architecture.ext.viewModel
+import com.jakewharton.rxbinding2.widget.RxTextView
+import kotlinx.android.synthetic.main.activity_search.*
 import timber.log.Timber
 
 class SearchActivity : AppCompatActivity() {
@@ -15,6 +18,7 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+        observeViewModel()
     }
 
 
@@ -60,6 +64,17 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun intentions(): Observable<SearchViewModel.Intention> {
+        val typing = RxTextView
+            .textChanges(editTextSearchUserTimeline)
+            .skipInitialValue()
+            .map { SearchViewModel.Intention.SearchTweets(it.toString()) }
+
+        val clearField = RxView
+            .clicks(buttonCleanEditTextSearch)
+            .map {
+                SearchViewModel.Intention.ClearSearch }
+
+        return Observable.merge(listOf(typing, clearField))
 
     }
 

@@ -65,6 +65,8 @@ dependencies {
     // Tools
     implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.ext.three10_version"
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timber"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rx_binding"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.ext.rx_binding"
 
     testImplementation "junit:junit:$rootProject.ext.junit"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

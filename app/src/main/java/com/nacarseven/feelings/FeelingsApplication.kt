@@ -2,10 +2,7 @@ package com.nacarseven.feelings
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.nacarseven.feelings.di.PROPERTY_BASE_URL
-import com.nacarseven.feelings.di.networkModule
-import com.nacarseven.feelings.di.repositoryModule
-import com.nacarseven.feelings.di.viewModelModule
+import com.nacarseven.feelings.di.*
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.android.startKoin
@@ -13,7 +10,7 @@ import timber.log.Timber
 import java.io.IOException
 import java.net.SocketException
 
-class FeelingsApplication : Application(){
+class FeelingsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -23,10 +20,10 @@ class FeelingsApplication : Application(){
         setupRxJavaDefaultErrorHandler()
     }
 
-
     private fun setupKoin() {
         startKoin(
             arrayListOf(
+                androidModule,
                 networkModule,
                 repositoryModule,
                 viewModelModule
