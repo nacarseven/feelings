@@ -6,14 +6,14 @@ import com.jakewharton.rxbinding2.view.RxView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.observeNonNull
 import io.reactivex.Observable
-import org.koin.android.architecture.ext.viewModel
 import com.jakewharton.rxbinding2.widget.RxTextView
 import kotlinx.android.synthetic.main.activity_search.*
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class SearchActivity : AppCompatActivity() {
 
-    private val viewModel: SearchViewModel by viewModel()
+    private val viewModel: SearchViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

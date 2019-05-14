@@ -2,9 +2,10 @@ package com.nacarseven.feelings.di
 
 import com.nacarseven.feelings.repository.SearchRepository
 import com.nacarseven.feelings.repository.SearchRepositoryContract
-import org.koin.dsl.module.applicationContext
+import org.koin.dsl.module
 
-val repositoryModule = applicationContext {
+val repositoryModule = module {
 
-    bean { SearchRepository(get()) as SearchRepositoryContract }
+    single { SearchRepository(get()) as SearchRepositoryContract }
+
 }

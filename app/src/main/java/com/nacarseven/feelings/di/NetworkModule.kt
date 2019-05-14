@@ -10,7 +10,8 @@ import com.nacarseven.feelings.util.Constants
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
-import org.koin.dsl.module.applicationContext
+import org.koin.core.qualifier.named
+import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -36,9 +37,9 @@ const val STREAM_SESSION_TIMEOUT = "streamSessionTimeout"
 const val STREAM_SESSION_TIMEOUT_HANDLER = "streamSessionTimeoutHandler"
 const val WIFI_IP = "networkManager"
 
-val networkModule = applicationContext {
+val networkModule = module {
 
-    factory(WIFI_IP) {
+    factory(named(WIFI_IP)) {
         val context = androidApplication() as Context
         val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
         var ipAddress = wifiManager.connectionInfo.ipAddress
@@ -57,11 +58,15 @@ val networkModule = applicationContext {
         }
     }
 
-    bean(STREAM_SESSION_TIMEOUT) { SessionTimeout() }
+    single(named(STREAM_SESSION_TIMEOUT)) {
+        SessionTimeout()
+    }
 
-    bean(STREAM_SESSION_TIMEOUT_HANDLER) { SessionTimeoutHandler(get()) }
+    single(named(STREAM_SESSION_TIMEOUT_HANDLER)) {
+        SessionTimeoutHandler(get())
+    }
 
-    bean(INTERCEPTOR_AUTHORIZATION) {
+    single(named(INTERCEPTOR_AUTHORIZATION)) {
         val searchRepository: SearchRepositoryContract = get()
         Interceptor { chain ->
             val builder = chain.request().newBuilder()
@@ -70,54 +75,65 @@ val networkModule = applicationContext {
         }
     }
 
-    bean {
-        val retrofit: Retrofit = get(RETROFIT)
+    single {
+        val retrofit: Retrofit = get(named(RETROFIT))
         retrofit.create(SearchApi::class.java)
     }
 
-
-    bean(OKHTTP) {
+    single(named(OKHTTP)) {
         OkHttpClient
             .Builder()
             .connectTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
-            .authenticator(get(AUTHENTICATOR))
-            .addInterceptor(get(INTERCEPTOR_AUTHORIZATION))
-            .addInterceptor(get(INTERCEPTOR_LOGGING))
-            .addInterceptor(get(INTERCEPTOR_NETWORK_DISCONNECTED))
+            .authenticator(get(named(AUTHENTICATOR)))
+            .addInterceptor(get(named(INTERCEPTOR_AUTHORIZATION)))
+            .addInterceptor(get(named(INTERCEPTOR_LOGGING)))
+            .addInterceptor(get(named(INTERCEPTOR_NETWORK_DISCONNECTED)))
             .build()
     }
 
-    bean(AUTHENTICATOR_OKHTTP) {
+    single(named(AUTHENTICATOR_OKHTTP)) {
         OkHttpClient
             .Builder()
             .connectTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptor(get(INTERCEPTOR_FORWARD_IP))
-            .addInterceptor(get(INTERCEPTOR_NETWORK_DISCONNECTED))
-            .addInterceptor(get(INTERCEPTOR_LOGGING))
-            .addInterceptor(get(INTERCEPTOR_VERSION_CODE))
+            .addInterceptor(get(named(INTERCEPTOR_FORWARD_IP)))
+            .addInterceptor(get(named(INTERCEPTOR_NETWORK_DISCONNECTED)))
+            .addInterceptor(get(named(INTERCEPTOR_LOGGING)))
+            .addInterceptor(get(named(INTERCEPTOR_VERSION_CODE)))
             .build()
     }
 
-    bean(RETROFIT) {
+    single(named(RETROFIT)) {
         val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .baseUrl(baseUrl)
-            .client(get(OKHTTP))
+            .client(get(named(OKHTTP)))
             .build()
     }
 
-    bean(RETROFIT_LOGIN) {
+    single(named(RETROFIT)) {
         val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .baseUrl(baseUrl)
-            .client(get(AUTHENTICATOR_OKHTTP))
+            .client(get(named(OKHTTP)))
+            .build()
+    }
+
+    single(named(RETROFIT_LOGIN)) {
+        val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
+        Retrofit.Builder()
+            .addConverterFactory(MoshiConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .baseUrl(baseUrl)
+            .client(get(named(AUTHENTICATOR_OKHTTP)))
             .build()
     }
 
 }
+
+

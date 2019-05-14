@@ -1,11 +1,10 @@
 package com.nacarseven.feelings.di
 
 import com.nacarseven.feelings.feature.SearchViewModel
-import org.koin.android.architecture.ext.viewModel
-import org.koin.dsl.module.applicationContext
+import org.koin.dsl.module
 
-val viewModelModule = applicationContext {
+val viewModelModule = module {
 
-    viewModel { SearchViewModel(get()) }
+    single { SearchViewModel(get()) }
 
 }

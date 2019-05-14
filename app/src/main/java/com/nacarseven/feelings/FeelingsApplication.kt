@@ -5,7 +5,8 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import com.nacarseven.feelings.di.*
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins
-import org.koin.android.ext.android.startKoin
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 import timber.log.Timber
 import java.io.IOException
 import java.net.SocketException
@@ -21,15 +22,12 @@ class FeelingsApplication : Application() {
     }
 
     private fun setupKoin() {
-        startKoin(
-            arrayListOf(
-                androidModule,
-                networkModule,
-                repositoryModule,
-                viewModelModule
-            ),
-            extraProperties = mapOf(PROPERTY_BASE_URL to BuildConfig.API_ENDPOINT)
-        )
+        startKoin {
+            androidContext(this@FeelingsApplication)
+            modules(networkModule, repositoryModule, viewModelModule)
+            mapOf(PROPERTY_BASE_URL to BuildConfig.API_ENDPOINT)
+        }
+
     }
 
     private fun setupTimber() {

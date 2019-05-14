@@ -1,4 +1,3 @@
-
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -56,7 +55,8 @@ dependencies {
 
     // Koin
     implementation "org.koin:koin-android:$rootProject.ext.koin_version"
-    implementation "org.koin:koin-android-architecture:$rootProject.ext.koin_version"
+    implementation "org.koin:koin-android-scope:$rootProject.ext.koin_version"
+    implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koin_version"
 
     // Architecture Components
     implementation "android.arch.lifecycle:$rootProject.ext.architecture_components_extension"
