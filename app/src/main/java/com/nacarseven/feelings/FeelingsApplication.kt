@@ -2,12 +2,12 @@ package com.nacarseven.feelings
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.nacarseven.feelings.di.*
+import com.nacarseven.feelings.di.networkModule
+import com.nacarseven.feelings.di.repositoryModule
+import com.nacarseven.feelings.di.viewModelModule
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
+import org.koin.android.ext.android.startKoin
 import timber.log.Timber
 import java.io.IOException
 import java.net.SocketException
@@ -23,13 +23,7 @@ class FeelingsApplication : Application() {
     }
 
     private fun setupKoin() {
-        startKoin {
-            androidLogger()
-            androidContext(this@FeelingsApplication)
-            modules(networkModule, repositoryModule, viewModelModule)
-//            mapOf(PROPERTY_BASE_URL to BuildConfig.API_ENDPOINT)
-        }
-
+        startKoin(this, listOf(networkModule, repositoryModule, viewModelModule))
     }
 
     private fun setupTimber() {
