@@ -39,7 +39,7 @@ const val WIFI_IP = "networkManager"
 
 val networkModule = module {
 
-    factory(named(WIFI_IP)) {
+    single(named(WIFI_IP)) {
         val context = androidApplication() as Context
         val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
         var ipAddress = wifiManager.connectionInfo.ipAddress
@@ -80,7 +80,7 @@ val networkModule = module {
         retrofit.create(SearchApi::class.java)
     }
 
-    single(named(OKHTTP)) {
+    single<OkHttpClient>(named(OKHTTP)) {
         OkHttpClient
             .Builder()
             .connectTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
@@ -92,7 +92,7 @@ val networkModule = module {
             .build()
     }
 
-    single(named(AUTHENTICATOR_OKHTTP)) {
+    single<OkHttpClient>(named(AUTHENTICATOR_OKHTTP)) {
         OkHttpClient
             .Builder()
             .connectTimeout(Constants.REQUEST_TIMEOUT, TimeUnit.SECONDS)
@@ -104,7 +104,7 @@ val networkModule = module {
             .build()
     }
 
-    single(named(RETROFIT)) {
+    single<Retrofit>(named(RETROFIT)) {
         val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
@@ -114,7 +114,7 @@ val networkModule = module {
             .build()
     }
 
-    single(named(RETROFIT)) {
+    single<Retrofit>(named(RETROFIT)) {
         val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
@@ -124,7 +124,7 @@ val networkModule = module {
             .build()
     }
 
-    single(named(RETROFIT_LOGIN)) {
+    single<Retrofit>(named(RETROFIT_LOGIN)) {
         val baseUrl = getProperty<String>(PROPERTY_BASE_URL)
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())

@@ -6,6 +6,7 @@ import com.nacarseven.feelings.di.*
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import timber.log.Timber
 import java.io.IOException
@@ -23,9 +24,10 @@ class FeelingsApplication : Application() {
 
     private fun setupKoin() {
         startKoin {
+            androidLogger()
             androidContext(this@FeelingsApplication)
             modules(networkModule, repositoryModule, viewModelModule)
-            mapOf(PROPERTY_BASE_URL to BuildConfig.API_ENDPOINT)
+//            mapOf(PROPERTY_BASE_URL to BuildConfig.API_ENDPOINT)
         }
 
     }
