@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">feelings</string>
+    <string name="hint_search_help">Pesquise pelo nome do usuário</string>
+    <string name="hint_search">Buscar</string>
 </resources>

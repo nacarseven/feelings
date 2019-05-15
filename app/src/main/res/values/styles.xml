@@ -13,4 +13,12 @@
         <item name="android:textColorHint">@color/grey</item>
     </style>
 
+    <style name="CircleButton">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:backgroundTint">@color/color_search_button</item>
+        <item name="borderWidth">0dp</item>
+        <item name="rippleColor">@color/lightBlue</item>
+    </style>
+
 </resources>

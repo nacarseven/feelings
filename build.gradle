@@ -47,6 +47,8 @@ ext {
 
     // test dependencies
     junit = "4.12"
+    android_test_runner = "1.0.2"
+    espresso_core = "3.0.2"
 
 }
 

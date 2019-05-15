@@ -33,13 +33,10 @@ class SearchViewModel(
         val search: Observable<ScreenState> = stream
             .ofType(Intention.SearchTweets::class.java)
             .switchMap { query ->
-
-                if (query.text.isEmpty())
-                    return@switchMap Observable.just(ScreenState.Empty)
-
                 searchRepository
                     .getSearchResult(query.text)
                     .subscribeOn(Schedulers.io())
+                    .doOnSubscribe { _state.postValue(ScreenState.Loading) }
                     .map { ScreenState.Result(it) as ScreenState }
                     .onErrorReturn { ScreenState.Result(emptyList()) }
                     .toObservable()
@@ -55,9 +52,16 @@ class SearchViewModel(
         intentions.subscribe(stream)
     }
 
+    override fun onCleared() {
+        stream.onComplete()
+        disposables.clear()
+        super.onCleared()
+    }
+
 
     sealed class Intention {
         data class SearchTweets(val text: String) : Intention()
+        object EmptyValue : Intention()
         object ClearSearch : Intention()
 
     }
@@ -70,7 +74,8 @@ class SearchViewModel(
     }
 
     sealed class SideEffect {
-        object CloseScreen : SideEffect()
+        object EmptyValueSearch : SideEffect()
+        object ClearFieldSearch : SideEffect()
     }
 
 }
