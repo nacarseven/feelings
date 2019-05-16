@@ -45,6 +45,11 @@ class SearchViewModel(
 
         disposables.add(search.subscribe { _state.postValue(it) })
 
+        val cleanField: Observable<SideEffect> = stream
+            .ofType(Intention.ShowErrorMessage::class.java)
+            .map { SideEffect.ClearFieldSearch }
+
+        disposables.add(cleanField.subscribe { _events.postValue(Event(it))})
 
     }
 
@@ -58,12 +63,9 @@ class SearchViewModel(
         super.onCleared()
     }
 
-
     sealed class Intention {
         data class SearchTweets(val text: String) : Intention()
-        object EmptyValue : Intention()
-        object ClearSearch : Intention()
-
+        object ShowErrorMessage : Intention()
     }
 
     sealed class ScreenState {
@@ -74,7 +76,6 @@ class SearchViewModel(
     }
 
     sealed class SideEffect {
-        object EmptyValueSearch : SideEffect()
         object ClearFieldSearch : SideEffect()
     }
 

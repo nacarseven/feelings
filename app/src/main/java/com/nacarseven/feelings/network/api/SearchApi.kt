@@ -12,5 +12,4 @@ interface SearchApi {
     @GET("statuses/user_timeline.json")
     fun getTweets(@Query("screen_name") screenName: String) : Single<List<TweetsResponse>>
 
-//    GET https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2
 }
