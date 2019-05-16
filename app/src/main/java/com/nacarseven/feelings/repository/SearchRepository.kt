@@ -17,7 +17,6 @@ class SearchRepository(private var searchApi: SearchApi) : SearchRepositoryContr
 
     override fun getSearchResult(query: String): Single<List<TweetsResponse>> {
         return searchApi.getTweets(query)
-
     }
 
 }

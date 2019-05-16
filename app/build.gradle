@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -51,9 +53,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rx_java"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rx_android"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit"
-    implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-//    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"
 
     // Koin
     implementation "org.koin:koin-android:$rootProject.ext.koin_version"
@@ -62,13 +62,16 @@ dependencies {
 
     // Architecture Components
     implementation "android.arch.lifecycle:$rootProject.ext.architecture_components_extension"
-//    kapt "android.arch.lifecycle:$rootProject.ext.architecture_components_compiler"
+    kapt "android.arch.lifecycle:$rootProject.ext.architecture_components_compiler"
 
     // Tools
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glide"
     implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.ext.three10_version"
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timber"
     implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rx_binding"
     implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.ext.rx_binding"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glide"
 
     testImplementation "junit:junit:$rootProject.ext.junit"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.android_test_runner"

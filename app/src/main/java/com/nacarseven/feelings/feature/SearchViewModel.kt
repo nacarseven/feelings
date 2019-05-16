@@ -3,6 +3,7 @@ package com.nacarseven.feelings.feature
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.nacarseven.feelings.network.HttpExceptionHandler
 import com.nacarseven.feelings.network.model.TweetsResponse
 import com.nacarseven.feelings.repository.SearchRepositoryContract
 import com.nacarseven.feelings.util.Event
@@ -38,7 +39,12 @@ class SearchViewModel(
                     .subscribeOn(Schedulers.io())
                     .doOnSubscribe { _state.postValue(ScreenState.Loading) }
                     .map { ScreenState.Result(it) as ScreenState }
-                    .onErrorReturn { ScreenState.Result(emptyList()) }
+                    .cast(ScreenState::class.java)
+                    .onErrorReturn {
+                            throwable ->
+                        val errorMessage = HttpExceptionHandler.handleError(throwable)
+                        ScreenState.Error(errorMessage)
+                    }
                     .toObservable()
 
             }

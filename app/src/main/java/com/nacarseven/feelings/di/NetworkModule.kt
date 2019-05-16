@@ -1,6 +1,5 @@
 package com.nacarseven.feelings.di
 
-import com.google.gson.GsonBuilder
 import com.nacarseven.feelings.BuildConfig
 import com.nacarseven.feelings.network.api.SearchApi
 import okhttp3.OkHttpClient
@@ -8,7 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 const val TIMEOUT = 120L
@@ -36,7 +35,7 @@ inline fun <reified T> createWebService(okHttpClient: OkHttpClient, url: String)
     val retrofit = Retrofit.Builder()
         .baseUrl(url)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+        .addConverterFactory(MoshiConverterFactory.create())
         .client(okHttpClient)
         .build()
 

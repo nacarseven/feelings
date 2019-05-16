@@ -7,52 +7,45 @@ import com.squareup.moshi.JsonClass
 data class TweetsResponse(
 
     @Json(name = "created_at")
-    var createDate: String,
+    val createDate: String,
 
-    @Json(name = "id")
-    var id: Long,
+    val id: Long,
 
     @Json(name = "text")
     val description: String,
 
-    @Json(name = "user")
-    var user: User,
-
-    @Json(name = "retweet_count")
-    var retweetCount: Int,
+    val user: User,
 
     @Json(name = "in_reply_to_screen_name")
-    var replyUser: String,
+    val replyUser: String?,
 
-    @Json(name = "favourites_count")
-    var likes: Int,
+    @Json(name = "favorite_count")
+    val likes: Int,
 
     @Json(name = "retweet_count")
-    var retweets: Int
+    val retweets: Int
 
 )
 
 @JsonClass(generateAdapter = true)
 data class User(
-    @Json(name = "name")
     val name: String,
 
     @Json(name = "screen_name")
-    var screenName: String,
+    val screenName: String,
 
     @Json(name = "profile_image_url")
-    var profileImage: String,
+    val profileImage: String,
 
-    @Json(name = "location")
-    var location: String,
+    val location: String,
 
     @Json(name = "description")
-    var descriptionUser: String,
+    val descriptionUser: String,
 
     @Json(name = "statuses_count")
-    var tweets: Int,
+    val tweets: Int,
 
     @Json(name = "friends_count")
-    var following: Int
+    val following: Int
 
 )
