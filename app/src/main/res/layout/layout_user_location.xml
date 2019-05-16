@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_weight="0.5"
+            android:id="@+id/linearLocation"
+            android:orientation="horizontal"
+            android:background="@color/black"
+            android:layout_width="0dp" android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/imgLocation" android:layout_width="25dp"
+                android:src="@drawable/location-icon-png-3"
+                android:layout_height="25dp"/>
+
+        <TextView
+                android:id="@+id/txtLocation"
+                tools:text="São Paulo, Brazil blablbalba"
+                android:maxLength="25"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:background="@color/colorPrimary"
+            android:id="@+id/linearLink"
+            android:orientation="horizontal"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+        <ImageView
+                android:id="@+id/imgLink" android:layout_width="25dp"
+                android:src="@drawable/location-icon-png-3"
+                android:layout_height="25dp"/>
+
+        <TextView
+                android:id="@+id/txtLink"
+                android:maxLength="25"
+                android:ellipsize="end"
+                tools:text="São Paulo, Brazil blablablabk"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

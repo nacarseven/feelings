@@ -1,5 +1,6 @@
 package com.nacarseven.feelings.feature
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -63,7 +64,7 @@ class SearchActivity : AppCompatActivity() {
 
             when (state) {
                 is SearchViewModel.ScreenState.Empty -> renderEmptyState()
-                is SearchViewModel.ScreenState.Result -> renderAutocompleteResults(state)
+                is SearchViewModel.ScreenState.Result -> goToActivityResult(state)
             }
 
             Timber.e("Rendered state: $state")
@@ -79,8 +80,15 @@ class SearchActivity : AppCompatActivity() {
 //        buttonSearch.isEnabled = false
     }
 
-    private fun renderAutocompleteResults(state: SearchViewModel.ScreenState.Result?) {
-        layoutNotFoundResult.visibility = if(state?.tweetList?.size == 0) View.VISIBLE else View.GONE
+    private fun goToActivityResult(state: SearchViewModel.ScreenState.Result?) {
+        layoutNotFoundResult.visibility = if (state!!.tweetList.isEmpty()) View.VISIBLE else View.GONE
+        Intent(this, ResultActivity::class.java).apply {
+            putParcelableArrayListExtra("list", state!!.tweetList)
+            startActivity(this)
+        }
+        finish()
+
+
 //        buttonSearch.alpha = ALPHA_OPAQUE
 //        buttonSearch.isEnabled = true
 

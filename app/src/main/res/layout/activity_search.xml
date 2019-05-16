@@ -51,7 +51,7 @@
             app:layout_constraintTop_toTopOf="@+id/textInputLayout"
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"/>
 
-    <include layout="@layout/not_found_result_layout"
+    <include layout="@layout/layout_not_found_result"
              android:id="@+id/layoutNotFoundResult"
              android:visibility="gone"
              tools:visibility="visible"

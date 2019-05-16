@@ -65,17 +65,18 @@ dependencies {
     kapt "android.arch.lifecycle:$rootProject.ext.architecture_components_compiler"
 
     // Tools
-    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    implementation "de.hdodenhof:circleimageview:$rootProject.circle_image_view"
     implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glide"
     implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.ext.three10_version"
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timber"
     implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rx_binding"
     implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.ext.rx_binding"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
     kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glide"
 
     testImplementation "junit:junit:$rootProject.ext.junit"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.android_test_runner"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espresso_core"
-    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation "com.android.support:support-annotations:$rootProject.ext.support_library"
 
 }
