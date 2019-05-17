@@ -24,6 +24,11 @@ class ResultActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
+    }
+
     private fun observeViewModel() {
         viewModel.bindIntentions(intentions())
 

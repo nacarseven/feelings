@@ -5,8 +5,6 @@ import io.reactivex.Single
 
 interface SearchRepositoryContract {
 
-    fun getAccessToken() : String
-
     fun getSearchResult(query: String) : Single<List<TweetsResponse>>
 
 }

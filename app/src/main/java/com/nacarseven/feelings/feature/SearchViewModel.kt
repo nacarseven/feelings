@@ -34,7 +34,6 @@ class SearchViewModel(
 
 
     init {
-        _state.value = ScreenState.Empty
 
         val search: Observable<ScreenState> = stream
             .ofType(Intention.SearchTweets::class.java)
@@ -42,14 +41,16 @@ class SearchViewModel(
                 searchRepository
                     .getSearchResult(query.text)
                     .subscribeOn(Schedulers.io())
-                    .doOnSubscribe { _state.postValue(ScreenState.Loading) }
+                    .doOnSubscribe { _state.postValue(ScreenState.Loading(true)) }
                     .map { mapper.map(it) }
                     .map {
                         resultRepository.saveTweetsResult(it)
-                        ScreenState.Result(it.second.isNotEmpty()) as ScreenState }
+                        _state.postValue(ScreenState.Loading(false))
+                        ScreenState.Result(it.second.isNotEmpty()) as ScreenState
+                    }
                     .cast(ScreenState::class.java)
-                    .onErrorReturn {
-                            throwable ->
+                    .onErrorReturn { throwable ->
+                        _state.postValue(ScreenState.Loading(false))
                         val errorMessage = HttpExceptionHandler.handleError(throwable)
                         ScreenState.Error(errorMessage)
                     }
@@ -63,7 +64,7 @@ class SearchViewModel(
             .ofType(Intention.ShowErrorMessage::class.java)
             .map { SideEffect.ClearFieldSearch }
 
-        disposable.add(cleanField.subscribe { _events.postValue(Event(it))})
+        disposable.add(cleanField.subscribe { _events.postValue(Event(it)) })
 
     }
 
@@ -83,8 +84,7 @@ class SearchViewModel(
     }
 
     sealed class ScreenState {
-        object Empty : ScreenState()
-        object Loading : ScreenState()
+        data class Loading(val enable: Boolean) : ScreenState()
         data class Error(val message: CharSequence) : ScreenState()
         data class Result(val hasResultToShow: Boolean) : ScreenState()
     }
@@ -97,7 +97,7 @@ class SearchViewModel(
         val date: String,
         val id: String,
         val description: String,
-        val replyUser: String?,
+        val replyUser: String,
         val likes: String,
         val retweets: String
     )
