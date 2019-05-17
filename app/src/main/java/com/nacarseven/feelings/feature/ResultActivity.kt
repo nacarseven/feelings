@@ -24,20 +24,14 @@ class ResultActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        finish()
-        super.onBackPressed()
-    }
-
     private fun observeViewModel() {
         viewModel.bindIntentions(intentions())
-
         viewModel.state.observeNonNull(this) {
-
             it.getContentIfNotHandled()?.let {
                 when (it) {
                     is ResultViewModel.ScreenState.ShowResult -> {
-                        resultAdapter.list = it.pairResult.second
+                        setupUserProfileLayout(it.pairResult.first)
+                        setListAdapter(it.pairResult.second)
                     }
                 }
             }
@@ -51,12 +45,26 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
+    private fun setListAdapter(items: List<SearchViewModel.TweetState>) {
+        resultAdapter.list = items
+    }
+
+    private fun setupUserProfileLayout(user: SearchViewModel.UserState) {
+//        civUserProfile.setImageBitmap(user.userImage)
+    }
+
     private fun intentions(): Observable<ResultViewModel.Intention> {
-        return RxView
+
+        val checkResult = Observable
+            .just(ResultViewModel.Intention.GetResultCache)
+
+        val closeScreen = RxView
             .clicks(imgClose)
             .map {
                 ResultViewModel.Intention.CloseResult
             }
+
+        return Observable.merge(checkResult, closeScreen)
     }
 
 }

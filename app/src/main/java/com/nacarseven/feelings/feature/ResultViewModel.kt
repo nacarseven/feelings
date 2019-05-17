@@ -26,18 +26,14 @@ class ResultViewModel(
 
     init {
 
-        disposable.add(observableResult()
-            .distinctUntilChanged()
-            .subscribe { _state.postValue(Event(it)) }
-        )
-    }
-
-    private fun observableResult(): Observable<ScreenState> {
-        return stream
+        val result: Observable<ScreenState> = stream
             .ofType(Intention.GetResultCache::class.java)
             .map {
                 ScreenState.ShowResult(resultRepository.getResult())
             }
+
+        disposable.add(result.subscribe { _state.postValue(Event(it)) })
+
     }
 
     fun bindIntentions(intentions: Observable<Intention>) {
@@ -56,7 +52,9 @@ class ResultViewModel(
     }
 
     sealed class ScreenState {
-        data class ShowResult(val pairResult: Pair<SearchViewModel.UserState, List<SearchViewModel.TweetState>>) :
+        data class ShowResult(
+            val pairResult: Pair<SearchViewModel.UserState,
+                    List<SearchViewModel.TweetState>>) :
             ScreenState()
     }
 
