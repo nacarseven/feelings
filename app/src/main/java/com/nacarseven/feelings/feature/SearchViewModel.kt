@@ -7,6 +7,7 @@ import android.os.Parcelable
 import com.nacarseven.feelings.network.HttpExceptionHandler
 import com.nacarseven.feelings.network.model.TweetsResponse
 import com.nacarseven.feelings.network.model.User
+import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.nacarseven.feelings.repository.SearchRepositoryContract
 import com.nacarseven.feelings.util.Event
 import io.reactivex.Observable
@@ -16,6 +17,7 @@ import io.reactivex.subjects.PublishSubject
 
 class SearchViewModel(
     private var searchRepository: SearchRepositoryContract,
+    private var resultRepository: ResultRepositoryContract,
     private var mapper: SearchMapper
 ) : ViewModel() {
 
@@ -42,7 +44,9 @@ class SearchViewModel(
                     .subscribeOn(Schedulers.io())
                     .doOnSubscribe { _state.postValue(ScreenState.Loading) }
                     .map { mapper.map(it) }
-                    .map { ScreenState.Result(it.first, it.second) as ScreenState }
+                    .map {
+                        resultRepository.saveTweetsResult(it)
+                        ScreenState.Result(it.second.isNotEmpty()) as ScreenState }
                     .cast(ScreenState::class.java)
                     .onErrorReturn {
                             throwable ->
@@ -82,7 +86,7 @@ class SearchViewModel(
         object Empty : ScreenState()
         object Loading : ScreenState()
         data class Error(val message: CharSequence) : ScreenState()
-        data class Result(val user: UserState, val tweetList: List<TweetState>) : ScreenState()
+        data class Result(val hasResultToShow: Boolean) : ScreenState()
     }
 
     sealed class SideEffect {

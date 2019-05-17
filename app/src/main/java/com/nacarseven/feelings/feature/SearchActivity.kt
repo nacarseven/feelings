@@ -5,12 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.jakewharton.rxbinding2.view.RxView
-import com.jakewharton.rxbinding2.widget.RxTextView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.observeNonNull
 import io.reactivex.Observable
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_search.*
 import org.koin.android.ext.android.inject
 import timber.log.Timber
@@ -80,10 +77,9 @@ class SearchActivity : AppCompatActivity() {
 //        buttonSearch.isEnabled = false
     }
 
-    private fun goToActivityResult(state: SearchViewModel.ScreenState.Result?) {
-        layoutNotFoundResult.visibility = if (state!!.tweetList.isEmpty()) View.VISIBLE else View.GONE
+    private fun goToActivityResult(state: SearchViewModel.ScreenState.Result) {
+        layoutNotFoundResult.visibility = if (state.hasResultToShow) View.VISIBLE else View.GONE
         Intent(this, ResultActivity::class.java).apply {
-            putParcelableArrayListExtra("list", state!!.tweetList)
             startActivity(this)
         }
         finish()
@@ -99,8 +95,9 @@ class SearchActivity : AppCompatActivity() {
         return RxView
             .clicks(buttonSearch)
             .map {
-                if (!editTextSearch.text.isNullOrBlank()) SearchViewModel.Intention.SearchTweets(editTextSearch.text.toString())
-                else SearchViewModel.Intention.ShowErrorMessage
+                if (!editTextSearch.text.isNullOrBlank()) {
+                    SearchViewModel.Intention.SearchTweets(editTextSearch.text.toString())
+                } else SearchViewModel.Intention.ShowErrorMessage
             }
 
 
