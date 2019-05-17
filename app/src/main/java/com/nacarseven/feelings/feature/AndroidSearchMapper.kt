@@ -1,6 +1,5 @@
 package com.nacarseven.feelings.feature
 
-import android.content.Context
 import com.nacarseven.feelings.network.model.TweetsResponse
 
 interface SearchMapper {
@@ -8,11 +7,11 @@ interface SearchMapper {
 
 }
 
-class AndroidSearchMapper(private val context: Context) : SearchMapper {
+class AndroidSearchMapper : SearchMapper {
 
     override fun map(result: List<TweetsResponse>) : Pair<SearchViewModel.UserState, List<SearchViewModel.TweetState>> {
 
-        val user = result.get(0).user
+        val user = result[0].user
         val tweetStateList = arrayListOf<SearchViewModel.TweetState>()
 
         val userState = SearchViewModel.UserState(

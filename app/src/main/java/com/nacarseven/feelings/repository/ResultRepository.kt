@@ -1,12 +1,25 @@
 package com.nacarseven.feelings.repository
 
 import com.nacarseven.feelings.feature.SearchViewModel
+import com.nacarseven.feelings.network.api.FeelingsApi
+import com.nacarseven.feelings.network.model.DocumentData
+import com.nacarseven.feelings.network.model.FeelingData
+import com.nacarseven.feelings.network.model.FeelingResponse
 import com.orhanobut.hawk.Hawk
+import io.reactivex.Single
 
 private const val USER = "user"
 private const val TWEETS = "tweets"
 
-class ResultRepository : ResultRepositoryContract {
+class ResultRepository(private var feelingApi: FeelingsApi) : ResultRepositoryContract {
+
+    override fun evaluateFeelings(text: String): Single<FeelingResponse> {
+        val doc = DocumentData("PLAIN_TEXT", text)
+        val data = FeelingData(doc, "UTF8")
+        val key = "AIzaSyC5DBefLY_EYjKNd9R4YueVYc9mG430eqY"
+
+        return feelingApi.evaluateFeelings(key, data)
+    }
 
     override fun deleteResultCache() {
         Hawk.delete(USER)

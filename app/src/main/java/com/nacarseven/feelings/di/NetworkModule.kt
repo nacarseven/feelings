@@ -1,6 +1,7 @@
 package com.nacarseven.feelings.di
 
 import com.nacarseven.feelings.BuildConfig
+import com.nacarseven.feelings.network.api.FeelingsApi
 import com.nacarseven.feelings.network.api.SearchApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,11 +14,16 @@ import java.util.concurrent.TimeUnit
 const val TIMEOUT = 120L
 
 val networkModule = module(definition = {
+
     // provided web components
     single { createOkHttpClient() }
     // Fill property
-    single {
+    single("retrofit_twitter") {
         createWebService<SearchApi>(get(), BuildConfig.BASE_URL)
+    }
+
+    single("retrofit_google") {
+        createWebService<FeelingsApi>(get(), BuildConfig.BASE_URL_GOOGLE)
     }
 })
 

@@ -2,11 +2,13 @@ package com.nacarseven.feelings.feature
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import com.jakewharton.rxbinding2.view.RxView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.observeNonNull
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_result.*
+import kotlinx.android.synthetic.main.layout_user_profile.*
 import org.koin.android.ext.android.inject
 
 class ResultActivity : AppCompatActivity() {
@@ -38,9 +40,9 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() {
-        with(recyclerView) {
+        with(recyclerViewTweetsResult) {
             adapter = resultAdapter
-            layoutManager = LinearLayoutManager(this)
+            layoutManager = LinearLayoutManager(context)
         }
     }
 

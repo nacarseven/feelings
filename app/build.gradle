@@ -18,12 +18,14 @@ android {
     }
 
     def BASE_URL = "BASE_URL"
+    def BASE_URL_GOOGLE = "BASE_URL_GOOGLE"
 
     buildTypes {
 
         debug {
             testCoverageEnabled true
             buildConfigField "String", BASE_URL, '"https://api.twitter.com/1.1/"'
+            buildConfigField "String", BASE_URL_GOOGLE, '"https://language.googleapis.com/v1/"'
 
         }
 
@@ -31,6 +33,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", BASE_URL, '"https://api.twitter.com/1.1/"'
+            buildConfigField "String", BASE_URL_GOOGLE, '""https://language.googleapis.com/v1/"'
         }
     }
 }

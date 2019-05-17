@@ -17,6 +17,17 @@
                                                   android:layout_marginTop="16dp" android:layout_marginStart="16dp"
                                                   android:id="@+id/civUserProfile"/>
 
+    <ImageView
+            android:id="@+id/imgClose"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/ic_close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
+
     <TextView
             android:id="@+id/txtUserName"
             style="@style/Text.16sp"
@@ -24,8 +35,8 @@
             tools:text="Profile's Name"
             android:layout_height="wrap_content" app:layout_constraintStart_toEndOf="@+id/civUserProfile"
             android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="16dp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imgClose"/>
 
     <TextView
             android:id="@+id/txtScreenName"

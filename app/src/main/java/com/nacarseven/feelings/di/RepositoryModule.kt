@@ -8,7 +8,7 @@ import org.koin.dsl.module.module
 
 val repositoryModule = module {
 
-    single { SearchRepository(get()) as SearchRepositoryContract }
-    single { ResultRepository() as ResultRepositoryContract }
+    single { SearchRepository(get("retrofit_twitter")) as SearchRepositoryContract }
+    single { ResultRepository(get("retrofit_google")) as ResultRepositoryContract }
 
 }

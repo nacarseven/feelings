@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.nacarseven.feelings.R
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.Observable
 import kotlin.properties.Delegates
@@ -19,7 +20,7 @@ class ResultAdapter : RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.layoutLocation, parent, false)
+            .inflate(R.layout.layout_user_location, parent, false)
         )
 
     override fun getItemCount(): Int = list.size

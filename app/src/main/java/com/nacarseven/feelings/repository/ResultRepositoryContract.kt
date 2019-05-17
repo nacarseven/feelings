@@ -1,6 +1,8 @@
 package com.nacarseven.feelings.repository
 
 import com.nacarseven.feelings.feature.SearchViewModel
+import com.nacarseven.feelings.network.model.FeelingResponse
+import io.reactivex.Single
 
 interface ResultRepositoryContract {
 
@@ -9,4 +11,6 @@ interface ResultRepositoryContract {
     fun getResult(): Pair<SearchViewModel.UserState, List<SearchViewModel.TweetState>>
 
     fun deleteResultCache()
+
+    fun evaluateFeelings(text: String) : Single<FeelingResponse>
 }
