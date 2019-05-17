@@ -21,7 +21,7 @@ class SearchViewModel(
     private var mapper: SearchMapper
 ) : ViewModel() {
 
-    private val disposables = CompositeDisposable()
+    private val disposable = CompositeDisposable()
     private val stream = PublishSubject.create<Intention>()
 
     private val _state = MutableLiveData<ScreenState>()
@@ -57,13 +57,13 @@ class SearchViewModel(
 
             }
 
-        disposables.add(search.subscribe { _state.postValue(it) })
+        disposable.add(search.subscribe { _state.postValue(it) })
 
         val cleanField: Observable<SideEffect> = stream
             .ofType(Intention.ShowErrorMessage::class.java)
             .map { SideEffect.ClearFieldSearch }
 
-        disposables.add(cleanField.subscribe { _events.postValue(Event(it))})
+        disposable.add(cleanField.subscribe { _events.postValue(Event(it))})
 
     }
 
@@ -73,7 +73,7 @@ class SearchViewModel(
 
     override fun onCleared() {
         stream.onComplete()
-        disposables.clear()
+        disposable.clear()
         super.onCleared()
     }
 

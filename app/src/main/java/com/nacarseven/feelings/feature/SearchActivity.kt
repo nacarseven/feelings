@@ -99,8 +99,6 @@ class SearchActivity : AppCompatActivity() {
                     SearchViewModel.Intention.SearchTweets(editTextSearch.text.toString())
                 } else SearchViewModel.Intention.ShowErrorMessage
             }
-
-
     }
 
 

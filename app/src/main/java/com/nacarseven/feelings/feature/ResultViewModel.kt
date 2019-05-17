@@ -2,42 +2,63 @@ package com.nacarseven.feelings.feature
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
+import io.reactivex.Observable
 import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.nacarseven.feelings.util.Event
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
+
 
 class ResultViewModel(
     private var resultRepository: ResultRepositoryContract
 ) : ViewModel() {
 
-    private val disposables = CompositeDisposable()
+    private val disposable = CompositeDisposable()
     private val stream = PublishSubject.create<Intention>()
 
-    private val _state = MutableLiveData<ScreenState>()
-    val state: LiveData<ScreenState>
+    private val _state = MutableLiveData<Event<ScreenState>>()
+    val state: LiveData<Event<ScreenState>>
         get() = _state
 
-    private val _events = MutableLiveData<Event<SideEffect>>()
-    val events: LiveData<Event<SideEffect>>
-        get() = _events
 
+    init {
+
+        disposable.add(observableResult()
+            .distinctUntilChanged()
+            .subscribe { _state.postValue(Event(it)) }
+        )
+    }
+
+    private fun observableResult(): Observable<ScreenState> {
+        return stream
+            .ofType(Intention.GetResultCache::class.java)
+            .map {
+                ScreenState.ShowResult(resultRepository.getResult())
+            }
+    }
+
+    fun bindIntentions(intentions: Observable<Intention>) {
+        intentions.subscribe(stream)
+    }
+
+    override fun onCleared() {
+        stream.onComplete()
+        disposable.clear()
+        super.onCleared()
+    }
 
     sealed class Intention {
-        data class SearchTweets(val text: String) : Intention()
-        object ShowErrorMessage : Intention()
+        object GetResultCache : Intention()
+        object CloseResult : Intention()
     }
 
     sealed class ScreenState {
-        object Empty : ScreenState()
-        object Loading : ScreenState()
-        data class Error(val message: CharSequence) : ScreenState()
-        data class Result(val hasResultToShow: Boolean) : ScreenState()
+        data class ShowResult(val pairResult: Pair<SearchViewModel.UserState, List<SearchViewModel.TweetState>>) :
+            ScreenState()
     }
 
-    sealed class SideEffect {
-        object ClearFieldSearch : SideEffect()
-    }
 
 }
