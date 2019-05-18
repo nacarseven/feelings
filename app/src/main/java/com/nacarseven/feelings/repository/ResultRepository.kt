@@ -14,7 +14,8 @@ private const val TWEETS = "tweets"
 class ResultRepository(private var feelingApi: FeelingsApi) : ResultRepositoryContract {
 
     override fun evaluateFeelings(text: String): Single<FeelingResponse> {
-        val doc = DocumentData("PLAIN_TEXT", text)
+        val language = "PT"
+        val doc = DocumentData("PLAIN_TEXT", language, text)
         val data = FeelingData(doc, "UTF8")
         val key = "AIzaSyC5DBefLY_EYjKNd9R4YueVYc9mG430eqY"
 

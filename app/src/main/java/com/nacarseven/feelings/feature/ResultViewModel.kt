@@ -2,15 +2,15 @@ package com.nacarseven.feelings.feature
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
+import com.nacarseven.feelings.network.HttpExceptionHandler
+import com.nacarseven.feelings.network.model.FeelingResponse
 import io.reactivex.Observable
 import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.nacarseven.feelings.util.Event
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
-
 
 class ResultViewModel(
     private var resultRepository: ResultRepositoryContract
@@ -32,7 +32,27 @@ class ResultViewModel(
                 ScreenState.ShowResult(resultRepository.getResult())
             }
 
-        disposable.add(result.subscribe { _state.postValue(Event(it)) })
+        val evaluateFeeling: Observable<ScreenState> = stream
+            .ofType(Intention.EvaluateFeelingItem::class.java)
+            .switchMap { query ->
+                resultRepository.evaluateFeelings(query.text)
+                    .subscribeOn(Schedulers.io())
+                    .doOnSubscribe{ _state.postValue(Event(ScreenState.Loading(true)))}
+                    .map {
+                        _state.postValue(Event(ScreenState.Loading(false)))
+                        ScreenState.ShowFeeling(it) as ScreenState
+                    }
+                    .cast(ScreenState::class.java)
+                    .onErrorReturn {
+                            throwable ->
+                        _state.postValue(Event(ScreenState.Loading(false)))
+                        val errorMessage = HttpExceptionHandler.handleError(throwable)
+                        ScreenState.Error(errorMessage)
+                    }
+                    .toObservable()
+            }
+
+        disposable.add(Observable.merge(result, evaluateFeeling).subscribe { _state.postValue(Event(it))})
 
     }
 
@@ -48,14 +68,17 @@ class ResultViewModel(
 
     sealed class Intention {
         object GetResultCache : Intention()
-        data class EvaluateFeelingItem(val text: String) : Intention()
+        data class EvaluateFeelingItem(val text: String, val position: Int) : Intention()
     }
 
     sealed class ScreenState {
+        data class Error(val message: CharSequence) : ScreenState()
+        data class Loading(val show: Boolean) : ScreenState()
         data class ShowResult(
             val pairResult: Pair<SearchViewModel.UserState,
                     List<SearchViewModel.TweetState>>) :
             ScreenState()
+        data class ShowFeeling(val score: FeelingResponse) : ScreenState()
     }
 
 

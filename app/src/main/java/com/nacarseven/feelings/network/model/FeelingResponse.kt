@@ -56,6 +56,8 @@ data class DocumentData(
 
     val type: String,
 
+    val language: String,
+
     val content: String
 
 )

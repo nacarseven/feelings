@@ -78,7 +78,7 @@ class ResultActivity : AppCompatActivity() {
         val clickItemList = resultAdapter
             .clickedTweet()
             .map {
-                ResultViewModel.Intention.EvaluateFeelingItem(it.description)
+                ResultViewModel.Intention.EvaluateFeelingItem(it.description, it.position)
             }
 
         return Observable.merge(init, clickItemList)
