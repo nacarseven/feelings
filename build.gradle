@@ -41,7 +41,6 @@ ext {
     timber = '4.7.0'
     three10_version = '1.1.0'
     glide = '4.7.1'
-    circle_image_view = '3.0.0'
     hawk = 'hawk:2.0.1'
 
     // architecture components dependencies

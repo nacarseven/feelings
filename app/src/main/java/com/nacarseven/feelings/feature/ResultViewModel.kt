@@ -48,7 +48,7 @@ class ResultViewModel(
 
     sealed class Intention {
         object GetResultCache : Intention()
-        object CloseResult : Intention()
+        data class EvaluateFeelingItem(val text: String) : Intention()
     }
 
     sealed class ScreenState {

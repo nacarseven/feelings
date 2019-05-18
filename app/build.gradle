@@ -69,7 +69,6 @@ dependencies {
 
     // Tools
     implementation "com.orhanobut:$rootProject.ext.hawk"
-    implementation "de.hdodenhof:circleimageview:$rootProject.circle_image_view"
     implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glide"
     implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.ext.three10_version"
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timber"

@@ -27,8 +27,12 @@ class AndroidSearchMapper : SearchMapper {
             user.location,
             user.descriptionUser,
             user.tweets.toString(),
-            user.following.toString()
+            user.following.toString(),
+            user.followers.toString(),
+            user.likes.toString(),
+            user.httpUrl
         )
+
 
         for (item in result) {
 
@@ -40,9 +44,7 @@ class AndroidSearchMapper : SearchMapper {
                     stringFormatted,
                     item.id.toString(),
                     item.description,
-                    if (item.replyUser.isNullOrEmpty()) "0" else item.replyUser,
-                    item.likes.toString(),
-                    item.retweets.toString()
+                    if (item.replyUser.isNullOrEmpty()) "0" else item.replyUser
                 )
             )
         }

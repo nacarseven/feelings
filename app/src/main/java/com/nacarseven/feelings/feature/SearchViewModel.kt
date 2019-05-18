@@ -97,9 +97,7 @@ class SearchViewModel(
         val date: String,
         val id: String,
         val description: String,
-        val replyUser: String,
-        val likes: String,
-        val retweets: String
+        val replyUser: String
     )
 
     data class UserState(
@@ -109,7 +107,10 @@ class SearchViewModel(
         val userLocation: String,
         val userDescription: String,
         val tweetsQtd: String,
-        val following: String
+        val following: String,
+        val followers: String,
+        val likes: String,
+        val httpUrl: String
     )
 
 }
