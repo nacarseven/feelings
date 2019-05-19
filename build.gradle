@@ -47,10 +47,14 @@ ext {
     architecture_components_compiler = 'compiler:1.1.1'
     architecture_components_extension = 'extensions:1.1.1'
 
+
     // test dependencies
     junit = "4.12"
     android_test_runner = "1.0.2"
     espresso_core = "3.0.2"
+    request_matcher = "2.2.0"
+    mockito = "2.19.0"
+    arch_test = "1.1.1"
 
 }
 

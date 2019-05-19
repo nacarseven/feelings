@@ -3,10 +3,7 @@ package com.nacarseven.feelings.feature
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.os.Parcelable
 import com.nacarseven.feelings.network.HttpExceptionHandler
-import com.nacarseven.feelings.network.model.TweetsResponse
-import com.nacarseven.feelings.network.model.User
 import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.nacarseven.feelings.repository.SearchRepositoryContract
 import com.nacarseven.feelings.util.Event
@@ -14,6 +11,8 @@ import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
+
+private const val HTTP_CODE_NOT_AUTHORIZED = 401
 
 class SearchViewModel(
     private var searchRepository: SearchRepositoryContract,
@@ -51,8 +50,13 @@ class SearchViewModel(
                     .cast(ScreenState::class.java)
                     .onErrorReturn { throwable ->
                         _state.postValue(ScreenState.Loading(false))
-                        val errorMessage = HttpExceptionHandler.handleError(throwable)
-                        ScreenState.Error(errorMessage)
+                        val codeError = HttpExceptionHandler.getHttpErrorCode(throwable)
+                        if (codeError == HTTP_CODE_NOT_AUTHORIZED) {
+                            ScreenState.Error("usuário privado")
+                        } else {
+                            val errorMessage = HttpExceptionHandler.handleError(throwable)
+                            ScreenState.Error(errorMessage)
+                        }
                     }
                     .toObservable()
 

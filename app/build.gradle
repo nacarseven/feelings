@@ -46,6 +46,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.support_library"
     implementation "com.android.support:design:$rootProject.ext.support_library"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraint_layout"
+    implementation "com.android.support:support-annotations:$rootProject.ext.support_library"
 
     // Communication
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
@@ -80,6 +81,11 @@ dependencies {
     testImplementation "junit:junit:$rootProject.ext.junit"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.android_test_runner"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espresso_core"
-    implementation "com.android.support:support-annotations:$rootProject.ext.support_library"
+    testImplementation "org.mockito:mockito-core:$rootProject.ext.mockito"
+    testImplementation "android.arch.core:core-testing:$rootProject.ext.arch_test"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.ext.okhttp"
+    androidTestImplementation "br.com.concretesolutions:requestmatcher:$rootProject.ext.request_matcher"
+    androidTestImplementation "org.koin:koin-test:$rootProject.ext.koin_version"
+    androidTestImplementation "com.android.support.test:rules:$rootProject.ext.android_test_runner"
 
 }
