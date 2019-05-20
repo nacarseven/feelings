@@ -9,7 +9,7 @@ import retrofit2.http.*
 interface FeelingsApi {
 
     @Headers("Content-Type: application/json")
-    @POST("documents:analyzeSentiment")
+    @POST("documents/:analyzeSentiment")
     fun evaluateFeelings(
         @Query("key") key: String,
         @Body data: FeelingData

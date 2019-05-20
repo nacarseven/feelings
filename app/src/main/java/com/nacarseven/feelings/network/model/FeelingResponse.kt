@@ -10,7 +10,7 @@ data class FeelingResponse(
     val sentimentDoc: Sentiment,
 
     @Json(name = "sentences")
-    val sentences: Sentence
+    val sentences: List<Sentence>
 
 )
 
