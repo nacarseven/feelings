@@ -5,6 +5,7 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import com.nacarseven.feelings.di.networkModule
 import com.nacarseven.feelings.di.repositoryModule
 import com.nacarseven.feelings.di.viewModelModule
+import com.orhanobut.hawk.Hawk
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.android.startKoin
@@ -19,6 +20,7 @@ class FeelingsApplication : Application() {
         AndroidThreeTen.init(this)
         setupTimber()
         setupKoin()
+        setupHawk()
         setupRxJavaDefaultErrorHandler()
     }
 
@@ -29,6 +31,8 @@ class FeelingsApplication : Application() {
     private fun setupTimber() {
         Timber.plant(Timber.DebugTree())
     }
+
+    private fun setupHawk() = Hawk.init(this).build()
 
     private fun setupRxJavaDefaultErrorHandler() {
         RxJavaPlugins.setErrorHandler { error ->

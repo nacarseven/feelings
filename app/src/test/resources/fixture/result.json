@@ -1,0 +1,989 @@
+[
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Thu May 16 12:13:24 +0000 2019",
+    "id": 1128996870058106880,
+    "id_str": "1128996870058106880",
+    "text": "@knobtviker @PCasafont @BrianGoetz @stuarthalloway So you understand that it's an example, but don't understand tha\u2026 https:\/\/t.co\/y4Z0CGzAh7",
+    "truncated": true,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "knobtviker",
+          "name": "Bojan Komljenovi\u0107",
+          "id": 220325805,
+          "id_str": "220325805",
+          "indices": [
+            0,
+            11
+          ]
+        },
+        {
+          "screen_name": "PCasafont",
+          "name": "Pere Casafont Girona",
+          "id": 510790201,
+          "id_str": "510790201",
+          "indices": [
+            12,
+            22
+          ]
+        },
+        {
+          "screen_name": "BrianGoetz",
+          "name": "Brian Goetz",
+          "id": 14639927,
+          "id_str": "14639927",
+          "indices": [
+            23,
+            34
+          ]
+        },
+        {
+          "screen_name": "stuarthalloway",
+          "name": "stuarthalloway",
+          "id": 14184390,
+          "id_str": "14184390",
+          "indices": [
+            35,
+            50
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https:\/\/t.co\/y4Z0CGzAh7",
+          "expanded_url": "https:\/\/twitter.com\/i\/web\/status\/1128996870058106880",
+          "display_url": "twitter.com\/i\/web\/status\/1\u2026",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "\u003ca href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\"\u003eTwitter for Android\u003c\/a\u003e",
+    "in_reply_to_status_id": 1128995421362282496,
+    "in_reply_to_status_id_str": "1128995421362282496",
+    "in_reply_to_user_id": 220325805,
+    "in_reply_to_user_id_str": "220325805",
+    "in_reply_to_screen_name": "knobtviker",
+    "user": {
+      "id": 15221262,
+      "id_str": "15221262",
+      "name": "Jake Wharton",
+      "screen_name": "JakeWharton",
+      "location": "Pittsburgh, Pennsylvania",
+      "description": "Opinions expressed here are my own, not those of my company. They made me write this because I complain about Inbox going away so much.",
+      "url": "https:\/\/t.co\/I5gbtX5DB9",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/I5gbtX5DB9",
+              "expanded_url": "http:\/\/jakewharton.com",
+              "display_url": "jakewharton.com",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 42563,
+      "friends_count": 309,
+      "listed_count": 1069,
+      "created_at": "Tue Jun 24 16:45:09 +0000 2008",
+      "favourites_count": 534,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 11316,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "525252",
+      "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+      "profile_background_tile": true,
+      "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000666093975\/cbe970ce9a19d2c6bec0d06c6004ccf0_normal.png",
+      "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/15221262\/1399524148",
+      "profile_link_color": "999999",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "222529",
+      "profile_text_color": "737373",
+      "profile_use_background_image": false,
+      "has_extended_profile": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null,
+      "translator_type": "regular"
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  }
+]

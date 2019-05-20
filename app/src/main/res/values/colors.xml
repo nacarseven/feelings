@@ -6,4 +6,7 @@
     <color name="black">#000000</color>
     <color name="grey">#999999</color>
     <color name="lightBlue">#44a4d9</color>
+    <color name="midBlue">#206bb2</color>
+    <color name="windowsBlueTwo">#3e80c0</color>
+    <color name="gray">#e5e5e5</color>
 </resources>
