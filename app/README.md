@@ -10,9 +10,9 @@ __Tive uma "sprint" de 7 dias para fazer o projeto e não consegui concluir tota
 
 #### //TODO list:
 
-- Implementar API do google natural languagem: cheguei a iniciar a implementação, porém esbarrei no retrofit, pois ele não faz a leitura dos ```:``` na url.
-- Exibição sentimentos de cada twitter
+- Interpretar os dados de retorno da api do Google para exibição do sentimento real
 - Testes instrumentados
+- colocar margens do layout no resources dimen
 - Acessibilidade
 - Ktlint
 - Crashlytics

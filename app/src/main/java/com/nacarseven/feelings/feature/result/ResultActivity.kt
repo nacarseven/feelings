@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.loadImage
 import com.nacarseven.feelings.extensions.observeNonNull
 import com.nacarseven.feelings.feature.search.SearchViewModel
+import com.nacarseven.feelings.network.model.Sentence
+import com.nacarseven.feelings.network.model.Sentiment
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_result.*
 import kotlinx.android.synthetic.main.layout_user_location.*
@@ -37,9 +40,21 @@ class ResultActivity : AppCompatActivity() {
                         setupUserProfileLayout(it.pairResult.first)
                         setListAdapter(it.pairResult.second)
                     }
+
+                    is ResultViewModel.ScreenState.ShowFeeling -> {
+                        analyzeFeeling(it.score.sentences)
+
+                    }
                 }
             }
         }
+    }
+
+    private fun analyzeFeeling(feeling: List<Sentence>){
+      //todo analyze
+        val sentence = feeling[0].text
+        Toast.makeText(this@ResultActivity,
+                "ItemCliked =" + sentence.content, Toast.LENGTH_SHORT).show()
     }
 
     private fun setUpRecyclerView() {
