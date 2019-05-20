@@ -20,7 +20,7 @@
             android:layout_marginBottom="8dp">
 
         <TextView
-                android:text="Twwets"
+                android:text="@string/tweets_title"
                 android:padding="8dp"
                 android:gravity="center"
                 style="@style/Text.12sp"
@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-                android:text="Following"
+                android:text="@string/following_title"
                 android:padding="8dp"
                 android:gravity="center"
                 style="@style/Text.12sp"
@@ -88,7 +88,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-                android:text="Followers"
+                android:text="@string/followers_title"
                 android:padding="8dp"
                 android:gravity="center"
                 style="@style/Text.12sp"
@@ -122,7 +122,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-                android:text="Likes"
+                android:text="@string/likes_title"
                 android:padding="8dp"
                 android:gravity="center"
                 style="@style/Text.12sp"

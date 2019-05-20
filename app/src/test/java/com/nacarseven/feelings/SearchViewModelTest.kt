@@ -1,8 +1,8 @@
 package com.nacarseven.feelings
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nacarseven.feelings.feature.AndroidSearchMapper
-import com.nacarseven.feelings.feature.SearchViewModel
+import com.nacarseven.feelings.feature.search.AndroidSearchMapper
+import com.nacarseven.feelings.feature.search.SearchViewModel
 import com.nacarseven.feelings.network.model.TweetsResponse
 import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.nacarseven.feelings.repository.SearchRepositoryContract
@@ -52,7 +52,8 @@ class SearchViewModelTest {
         val listTwwetsResponse = getMockedResultSearch()
         val mappedResult = mapper.map(listTwwetsResponse)
 
-        val expected = listOf(SearchViewModel.ScreenState.Loading(true),
+        val expected = listOf(
+            SearchViewModel.ScreenState.Loading(true),
             SearchViewModel.ScreenState.Loading(false),
             SearchViewModel.ScreenState.Result(true))
         val actual = mutableListOf<SearchViewModel.ScreenState>()

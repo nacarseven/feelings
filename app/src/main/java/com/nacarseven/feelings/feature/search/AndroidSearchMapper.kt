@@ -1,4 +1,4 @@
-package com.nacarseven.feelings.feature
+package com.nacarseven.feelings.feature.search
 
 import android.annotation.SuppressLint
 import com.nacarseven.feelings.network.model.TweetsResponse

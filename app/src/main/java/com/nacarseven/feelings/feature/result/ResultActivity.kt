@@ -1,14 +1,13 @@
-package com.nacarseven.feelings.feature
+package com.nacarseven.feelings.feature.result
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import com.jakewharton.rxbinding2.view.RxView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.loadImage
 import com.nacarseven.feelings.extensions.observeNonNull
+import com.nacarseven.feelings.feature.search.SearchViewModel
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_result.*
 import kotlinx.android.synthetic.main.layout_user_location.*
@@ -78,7 +77,10 @@ class ResultActivity : AppCompatActivity() {
         val clickItemList = resultAdapter
             .clickedTweet()
             .map {
-                ResultViewModel.Intention.EvaluateFeelingItem(it.description, it.position)
+                ResultViewModel.Intention.EvaluateFeelingItem(
+                    it.description,
+                    it.position
+                )
             }
 
         return Observable.merge(init, clickItemList)

@@ -1,4 +1,4 @@
-package com.nacarseven.feelings.feature
+package com.nacarseven.feelings.feature.search
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
@@ -40,16 +40,28 @@ class SearchViewModel(
                 searchRepository
                     .getSearchResult(query.text)
                     .subscribeOn(Schedulers.io())
-                    .doOnSubscribe { _state.postValue(ScreenState.Loading(true)) }
+                    .doOnSubscribe { _state.postValue(
+                        ScreenState.Loading(
+                            true
+                        )
+                    ) }
                     .map { mapper.map(it) }
                     .map {
                         resultRepository.saveTweetsResult(it)
-                        _state.postValue(ScreenState.Loading(false))
+                        _state.postValue(
+                            ScreenState.Loading(
+                                false
+                            )
+                        )
                         ScreenState.Result(it.second.isNotEmpty()) as ScreenState
                     }
                     .cast(ScreenState::class.java)
                     .onErrorReturn { throwable ->
-                        _state.postValue(ScreenState.Loading(false))
+                        _state.postValue(
+                            ScreenState.Loading(
+                                false
+                            )
+                        )
                         val codeError = HttpExceptionHandler.getHttpErrorCode(throwable)
                         if (codeError == HTTP_CODE_NOT_AUTHORIZED) {
                             ScreenState.Error("usuário privado")

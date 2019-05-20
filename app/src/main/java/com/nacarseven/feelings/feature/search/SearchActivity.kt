@@ -1,4 +1,4 @@
-package com.nacarseven.feelings.feature
+package com.nacarseven.feelings.feature.search
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import com.jakewharton.rxbinding2.view.RxView
 import com.nacarseven.feelings.R
 import com.nacarseven.feelings.extensions.observeNonNull
+import com.nacarseven.feelings.feature.result.ResultActivity
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_search.*
 import org.koin.android.ext.android.inject
@@ -29,7 +30,7 @@ class SearchActivity : AppCompatActivity() {
             it.getContentIfNotHandled()?.let { sideEffect ->
                 when (sideEffect) {
                     is SearchViewModel.SideEffect.ClearFieldSearch ->
-                        textInputLayout.error = "digite um usuario válido"
+                        textInputLayout.error = resources.getString(R.string.error_user)
                 }
             }
         }

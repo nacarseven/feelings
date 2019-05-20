@@ -1,8 +1,9 @@
-package com.nacarseven.feelings.feature
+package com.nacarseven.feelings.feature.result
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.nacarseven.feelings.feature.search.SearchViewModel
 import com.nacarseven.feelings.network.HttpExceptionHandler
 import com.nacarseven.feelings.network.model.FeelingResponse
 import io.reactivex.Observable
@@ -37,15 +38,27 @@ class ResultViewModel(
             .switchMap { query ->
                 resultRepository.evaluateFeelings(query.text)
                     .subscribeOn(Schedulers.io())
-                    .doOnSubscribe{ _state.postValue(Event(ScreenState.Loading(true)))}
+                    .doOnSubscribe{ _state.postValue(Event(
+                        ScreenState.Loading(
+                            true
+                        )
+                    ))}
                     .map {
-                        _state.postValue(Event(ScreenState.Loading(false)))
+                        _state.postValue(Event(
+                            ScreenState.Loading(
+                                false
+                            )
+                        ))
                         ScreenState.ShowFeeling(it) as ScreenState
                     }
                     .cast(ScreenState::class.java)
                     .onErrorReturn {
                             throwable ->
-                        _state.postValue(Event(ScreenState.Loading(false)))
+                        _state.postValue(Event(
+                            ScreenState.Loading(
+                                false
+                            )
+                        ))
                         val errorMessage = HttpExceptionHandler.handleError(throwable)
                         ScreenState.Error(errorMessage)
                     }

@@ -1,6 +1,6 @@
 package com.nacarseven.feelings.repository
 
-import com.nacarseven.feelings.feature.SearchViewModel
+import com.nacarseven.feelings.feature.search.SearchViewModel
 import com.nacarseven.feelings.network.api.FeelingsApi
 import com.nacarseven.feelings.network.model.DocumentData
 import com.nacarseven.feelings.network.model.FeelingData

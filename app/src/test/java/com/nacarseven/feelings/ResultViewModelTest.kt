@@ -1,8 +1,8 @@
 package com.nacarseven.feelings
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nacarseven.feelings.feature.AndroidSearchMapper
-import com.nacarseven.feelings.feature.ResultViewModel
+import com.nacarseven.feelings.feature.search.AndroidSearchMapper
+import com.nacarseven.feelings.feature.result.ResultViewModel
 import com.nacarseven.feelings.network.model.TweetsResponse
 import com.nacarseven.feelings.repository.ResultRepositoryContract
 import com.squareup.moshi.JsonAdapter

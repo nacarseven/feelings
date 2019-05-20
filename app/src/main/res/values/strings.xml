@@ -2,4 +2,9 @@
     <string name="app_name">feelings</string>
     <string name="hint_search_help">Pesquise pelo nome do usuário</string>
     <string name="hint_search">Buscar</string>
+    <string name="error_user">Digite um usuário válido</string>
+    <string name="tweets_title">Twwets</string>
+    <string name="following_title">Following</string>
+    <string name="followers_title">Followers</string>
+    <string name="likes_title">Likes</string>
 </resources>

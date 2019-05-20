@@ -1,9 +1,9 @@
 package com.nacarseven.feelings.di
 
-import com.nacarseven.feelings.feature.AndroidSearchMapper
-import com.nacarseven.feelings.feature.ResultViewModel
-import com.nacarseven.feelings.feature.SearchMapper
-import com.nacarseven.feelings.feature.SearchViewModel
+import com.nacarseven.feelings.feature.search.AndroidSearchMapper
+import com.nacarseven.feelings.feature.result.ResultViewModel
+import com.nacarseven.feelings.feature.search.SearchMapper
+import com.nacarseven.feelings.feature.search.SearchViewModel
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
